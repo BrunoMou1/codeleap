@@ -14,6 +14,7 @@ import { queryClient } from "../../services/queryClient";
 import { DeleteModal } from "../../components/deleteModal";
 
 import "./styles.scss";
+import { Spinner } from "../../components/spinner";
 
 interface PostProps {
   id: number;
@@ -47,15 +48,12 @@ export function Home() {
     SetIsEditModalOpen(false);
   }
 
-  const { data } = useQuery(
-    "posts",
-    async () => {
-      const response = await axios.get(`https://dev.codeleap.co.uk/careers/`)
-      return response.data.results;
-    }
-  );
+  const { data, isFetching } = useQuery("posts", async () => {
+    const response = await axios.get(`https://dev.codeleap.co.uk/careers/`);
+    return response.data.results;
+  });
 
-  const createPost = useMutation(
+  const { mutateAsync } = useMutation(
     async () => {
       const response = await axios.post("https://dev.codeleap.co.uk/careers/", {
         username: state,
@@ -71,10 +69,14 @@ export function Home() {
     }
   );
 
+  if (isFetching) {
+    console.log("isFetching");
+  }
+
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    createPost.mutateAsync();
+    mutateAsync();
   }
 
   return (
@@ -110,14 +112,17 @@ export function Home() {
                 value={content}
                 onChange={(event) => setContent(event.target.value)}
               />
-              <Button
-                className="black"
-                type="submit"
-                onClick={handleSubmit}
-                disabled={title && content ? false : true}
-              >
-                CREATE
-              </Button>
+              <div>
+                {isFetching && <Spinner />}
+                <Button
+                  className="black"
+                  type="submit"
+                  onClick={handleSubmit}
+                  disabled={title && content ? false : true}
+                >
+                  CREATE
+                </Button>
+              </div>
             </form>
           </div>
           <div className="posts">
