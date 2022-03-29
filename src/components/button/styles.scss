@@ -20,7 +20,17 @@ button:disabled {
   color: var(--black);
 }
 
+.white:hover {
+  background-color: var(--gray-100);
+  color: var(--black);
+}
+
 .black {
   background-color: var(--black);
+  color: var(--white);
+}
+
+.black:hover {
+  background-color: var(--gray-600);
   color: var(--white);
 }
