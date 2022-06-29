@@ -2,7 +2,7 @@
 
 ## Sobre
 
-A aplicação consite em um crud, onde o usuario consegue entrar com o neme de usuario, criar novos posts, vizualizar os posts de outras pessoas, editar e deletar seus propios posts.
+A aplicação consite em um crud, onde o usuario consegue entrar com o nome de usuario, criar novos posts, vizualizar os posts de outras pessoas, editar e deletar seus propios posts.
 
 ## Pré-requisitos
 
