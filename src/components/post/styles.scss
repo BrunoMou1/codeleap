@@ -1,0 +1,29 @@
+.post {
+  margin: 2rem 0;
+
+  .post-body {
+    border: 1px solid var(--gray-600);
+    padding: 1.5rem 2.5rem;
+
+    .content-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        color: var(--gray-600);
+        font-size: 1.125rem;
+        font-weight: bold;
+      }
+    }
+
+    .post-content {
+      margin-top: 2rem;
+
+      p {
+        font-size: 1.125rem;
+        font-weight: regular;
+      }
+    }
+  }
+}

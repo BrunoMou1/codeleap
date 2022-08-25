@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+
+  --gray-100: #dddddd;
+  --gray-200: #cccccc;
+  --gray-400: #999999;
+  --gray-600: #777777;
+  --gray-800: #555555;
+
+  --black: #000000;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--gray-100);
+  color: var(--black);
+}
+
+.react-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-modal-edit-content {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  border-radius: 0.25rem;
+}
+
+.react-modal-delete-content {
+  width: 70%;
+  max-width: 1000px;
+
+  position: relative;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  .react-modal-delete-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .content {
+    width: 100%;
+    padding: 3rem 2.5rem;
+    background-color: var(--white);
+
+    .create-post {
+      background-color: var(--white);
+      padding: 1.5rem 2rem;
+      border: 1px solid var(--gray-600);
+
+      div {
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      p {
+        font-size: 1.375rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      input {
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      textarea {
+        margin-top: 0.5rem;
+      }
+
+      button {
+        position: relative;
+        left: calc(100% - 111px);
+      }
+    }
+  }
+  @media (max-width: 720px) {
+    .content {
+      padding: 3rem 1rem;
+    }
+  }
+}
